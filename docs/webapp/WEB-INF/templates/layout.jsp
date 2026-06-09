@@ -26,10 +26,13 @@
     <link rel="canonical" href="${pageContext.request.contextPath}">
     
     <!-- CSS (только main.css, как в эталонном index.html) -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
-    
-    <!-- Preload -->
-    <link rel="preload" as="image" href="${pageContext.request.contextPath}/resources/images/codefest-bg.jpeg">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
+
+<!-- Тема (по умолчанию фиолетовая) -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/theme-purple.css" id="theme-stylesheet">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="${pageContext.request.contextPath}/resources/images/codefest-bg.jpeg">
 </head>
 <body class="${bodyClass}">
     <%@ include file="/WEB-INF/templates/header.jsp" %>
