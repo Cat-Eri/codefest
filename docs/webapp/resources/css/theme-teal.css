@@ -1,5 +1,5 @@
 /* Бирюзовая минималистичная тема */
-:root {
+body.theme-teal {
     --primary: #14b8a6;
     --primary-dark: #0d9488;
     --secondary: #10b981;
@@ -11,12 +11,12 @@
     --gradient: linear-gradient(135deg, #14b8a6 0%, #10b981 100%);
 }
 
-.direction-card,
-.speaker-card,
-.program-item {
+body.theme-teal .direction-card,
+body.theme-teal .speaker-card,
+body.theme-teal .program-item {
     border-radius: 30px;
 }
 
-.btn {
+body.theme-teal .btn {
     border-radius: 50px;
 }
