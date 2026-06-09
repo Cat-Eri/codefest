@@ -1,5 +1,5 @@
 /* Синяя технологичная тема */
-:root {
+body.theme-blue {
     --primary: #0ea5e9;
     --primary-dark: #0284c7;
     --secondary: #06b6d4;
@@ -11,14 +11,14 @@
     --gradient: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
 }
 
-.hero {
+body.theme-blue .hero {
     background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
 }
 
-.direction-card:hover {
+body.theme-blue .direction-card:hover {
     box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
 }
 
-.program-item {
+body.theme-blue .program-item {
     border-left-color: var(--primary);
 }
