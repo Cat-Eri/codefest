@@ -147,82 +147,63 @@ if (header) {
     updateParallax();
 })();
 
-// ============================================
-// ПЕРЕКЛЮЧАТЕЛЬ ТЕМ (опционально)
-// ============================================
-function switchTheme(themeName) {
-    const themeStylesheet = document.getElementById('theme-stylesheet');
-    if (themeStylesheet) {
-        themeStylesheet.href = `/resources/css/theme-${themeName}.css`;
-        localStorage.setItem('selectedTheme', themeName);
-    }
-}
-
-// Восстановление темы при загрузке
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('selectedTheme');
-    if (savedTheme) {
-        switchTheme(savedTheme);
-    }
-});
 
 // ============================================
 // ПЕРЕКЛЮЧАТЕЛЬ ТЕМ
 // ============================================
 (function() {
     const themeButtons = document.querySelectorAll('.theme-btn');
-    const themeStylesheet = document.getElementById('theme-stylesheet');
+    const body = document.body;
     
-    // Если нет элемента или кнопок — выходим
-    if (!themeStylesheet || themeButtons.length === 0) return;
+    // Список всех возможных классов тем
+    const themeClasses = ['theme-purple', 'theme-blue', 'theme-teal'];
     
     // Функция смены темы
-    function switchTheme(themeName, cssPath) {
-        // Меняем href у тега link
-        themeStylesheet.href = cssPath;
+    function switchTheme(themeName) {
+        // Удаляем все классы тем с body
+        themeClasses.forEach(cls => body.classList.remove(cls));
+        
+        // Добавляем новый класс темы
+        body.classList.add('theme-' + themeName);
         
         // Обновляем активную кнопку
         themeButtons.forEach(btn => {
             btn.classList.toggle('active', btn.dataset.theme === themeName);
         });
         
-        // Сохраняем выбор в localStorage
+        // Сохраняем выбор
         try {
             localStorage.setItem('selectedTheme', themeName);
-            localStorage.setItem('selectedThemeCss', cssPath);
         } catch(e) {
             // localStorage может быть недоступен
         }
+        
+        console.log('Тема изменена на:', themeName);
     }
     
-    // Обработчики кликов по кнопкам
+    // Обработчики кликов
     themeButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            const themeName = btn.dataset.theme;
-            const cssPath = btn.dataset.css;
-            if (cssPath) {
-                switchTheme(themeName, cssPath);
-            }
+            switchTheme(btn.dataset.theme);
         });
     });
     
     // Восстанавливаем тему при загрузке
     try {
         const savedTheme = localStorage.getItem('selectedTheme');
-        const savedCss = localStorage.getItem('selectedThemeCss');
-        
-        if (savedTheme && savedCss) {
-            // Находим кнопку с нужной темой
-            const savedBtn = Array.from(themeButtons).find(btn => btn.dataset.theme === savedTheme);
-            if (savedBtn) {
-                // Применяем сохранённый путь
-                themeStylesheet.href = savedCss;
-                themeButtons.forEach(btn => {
-                    btn.classList.toggle('active', btn.dataset.theme === savedTheme);
-                });
-            }
+        if (savedTheme && themeClasses.includes('theme-' + savedTheme)) {
+            // Удаляем дефолтную тему
+            themeClasses.forEach(cls => body.classList.remove(cls));
+            // Применяем сохранённую
+            body.classList.add('theme-' + savedTheme);
+            
+            themeButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === savedTheme);
+            });
+            
+            console.log('Восстановлена тема:', savedTheme);
         }
     } catch(e) {
-        // Игнорируем ошибки localStorage
+        // Игнорируем ошибки
     }
 })();
