@@ -5,7 +5,7 @@
 <head>
     <%@ include file="/WEB-INF/templates/seo-meta.jsp" %>
     
-    <title><c:out value="${pageTitle}"/> | CODEFEST 2026</title>
+    <title><c:out value="${pageTitle}"/></title>
     <meta name="description" content="<c:out value="${pageDescription}"/>">
     <meta name="keywords" content="<c:out value="${pageKeywords}"/>">
     
@@ -25,9 +25,8 @@
     <!-- Canonical -->
     <link rel="canonical" href="${pageContext.request.contextPath}">
     
-    <!-- CSS -->
+    <!-- CSS (только main.css, как в эталонном index.html) -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/theme-purple.css" id="theme-stylesheet">
     
     <!-- Preload -->
     <link rel="preload" as="image" href="${pageContext.request.contextPath}/resources/images/codefest-bg.jpeg">
