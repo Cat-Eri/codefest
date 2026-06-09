@@ -803,3 +803,72 @@ body {
         --container-max: 1360px;
     }
 }
+
+/* ============================================
+   ПЕРЕКЛЮЧАТЕЛЬ ТЕМ
+   ============================================ */
+.theme-switcher {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+.theme-btn.active {
+    border-color: var(--light);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.theme-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Цвета точек для каждой темы */
+.theme-btn[data-theme="purple"] .theme-dot {
+    background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+}
+
+.theme-btn[data-theme="blue"] .theme-dot {
+    background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+}
+
+.theme-btn[data-theme="teal"] .theme-dot {
+    background: linear-gradient(135deg, #14b8a6 0%, #10b981 100%);
+}
+
+/* На мобильных — переключатель под меню */
+@media (max-width: 768px) {
+    .theme-switcher {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        background: rgba(15, 15, 30, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+}
