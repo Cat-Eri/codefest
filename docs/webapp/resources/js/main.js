@@ -165,3 +165,44 @@ document.addEventListener('DOMContentLoaded', () => {
         switchTheme(savedTheme);
     }
 });
+
+// ============================================
+// ПЕРЕКЛЮЧАТЕЛЬ ТЕМ
+// ============================================
+(function() {
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    const themeStylesheet = document.getElementById('theme-stylesheet');
+    
+    // Функция смены темы
+    function switchTheme(themeName) {
+        if (!themeStylesheet) return;
+        
+        // Меняем href у тега link
+        themeStylesheet.href = `${window.location.pathname.replace(/\/[^\/]*$/, '')}/resources/css/theme-${themeName}.css`;
+        
+        // Обновляем активную кнопку
+        themeButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.theme === themeName);
+        });
+        
+        // Сохраняем выбор в localStorage
+        localStorage.setItem('selectedTheme', themeName);
+    }
+    
+    // Обработчики кликов по кнопкам
+    themeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            switchTheme(btn.dataset.theme);
+        });
+    });
+    
+    // Восстанавливаем тему при загрузке
+    const savedTheme = localStorage.getItem('selectedTheme');
+    if (savedTheme && themeStylesheet) {
+        // Меняем href сразу, без анимации
+        themeStylesheet.href = `${window.location.pathname.replace(/\/[^\/]*$/, '')}/resources/css/theme-${savedTheme}.css`;
+        themeButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.theme === savedTheme);
+        });
+    }
+})();
