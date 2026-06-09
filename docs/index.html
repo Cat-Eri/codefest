@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <link rel="stylesheet" href="webapp/resources/css/theme-purple.css" id="theme-stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,19 @@
                 <button class="burger" aria-label="Меню" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
+
+<div class="theme-switcher">
+    <button class="theme-btn active" data-theme="purple" title="Фиолетовая">
+        <span class="theme-dot"></span>
+    </button>
+    <button class="theme-btn" data-theme="blue" title="Синяя">
+        <span class="theme-dot"></span>
+    </button>
+    <button class="theme-btn" data-theme="teal" title="Бирюзовая">
+        <span class="theme-dot"></span>
+    </button>
+</div>
+                
                 <ul class="nav-links">
                     <li><a href="#about">О конференции</a></li>
                     <li><a href="#speakers">Спикеры</a></li>
