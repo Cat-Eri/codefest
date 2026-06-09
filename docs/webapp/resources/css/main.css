@@ -120,13 +120,6 @@ body {
     gap: 20px;
 }
 
-.imagelogo {
-    width: 100%;
-    height: 40px;
-    margin: 0px 10px 0px 10px !important;
-    align-items: center center;
-}
-
 .logo {
     font-size: clamp(20px, 3vw, 26px);
     font-weight: 800;
@@ -137,6 +130,18 @@ body {
     text-decoration: none;
     margin: 0px 10px 0px 10px !important;
     word-wrap: break-word;
+    /* Добавляем flex для выравнивания */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между логотипом и текстом */
+}
+
+.imagelogo {
+    width: 40px; /* Исправлено: было weight (ошибка) */
+    height: 40px;
+    margin: 0 !important;
+    object-fit: contain; /* Сохраняет пропорции */
+    flex-shrink: 0; /* Не даёт сжиматься */
 }
 
 .nav-links {
