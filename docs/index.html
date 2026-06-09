@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <link rel="stylesheet" href="webapp/resources/css/theme-purple.css">
-<link rel="stylesheet" href="webapp/resources/css/theme-blue.css">
-<link rel="stylesheet" href="webapp/resources/css/theme-teal.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CODEFEST 2026 — крупнейшая IT-конференция года">
     <title>CODEFEST 2026 — IT-конференция нового поколения</title>
+    
+    <!-- Основной CSS -->
     <link rel="stylesheet" href="webapp/resources/css/main.css">
+    
+    <!-- Все три темы подключены сразу -->
+    <link rel="stylesheet" href="webapp/resources/css/theme-purple.css">
+    <link rel="stylesheet" href="webapp/resources/css/theme-blue.css">
+    <link rel="stylesheet" href="webapp/resources/css/theme-teal.css">
 </head>
 <body class="theme-purple">
     <!-- HEADER -->
@@ -20,17 +24,18 @@
                     <span></span><span></span><span></span>
                 </button>
 
-<div class="theme-switcher">
-    <button class="theme-btn active" data-theme="purple" title="Фиолетовая">
-        <span class="theme-dot"></span>
-    </button>
-    <button class="theme-btn" data-theme="blue" title="Синяя">
-        <span class="theme-dot"></span>
-    </button>
-    <button class="theme-btn" data-theme="teal" title="Бирюзовая">
-        <span class="theme-dot"></span>
-    </button>
-</div>
+                <!-- Переключатель тем -->
+                <div class="theme-switcher">
+                    <button class="theme-btn active" data-theme="purple" title="Фиолетовая">
+                        <span class="theme-dot"></span>
+                    </button>
+                    <button class="theme-btn" data-theme="blue" title="Синяя">
+                        <span class="theme-dot"></span>
+                    </button>
+                    <button class="theme-btn" data-theme="teal" title="Бирюзовая">
+                        <span class="theme-dot"></span>
+                    </button>
+                </div>
                 
                 <ul class="nav-links">
                     <li><a href="#about">О конференции</a></li>
