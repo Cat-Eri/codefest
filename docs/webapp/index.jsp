@@ -3,9 +3,9 @@
 
 <%
     // SEO параметры страницы
-    request.setAttribute("pageTitle", "CODEFEST 2026 — Крупнейшая IT-конференция в Челябинске");
-    request.setAttribute("pageDescription", "CODEFEST 2026 в Челябинске. 17-18 сентября 2026. 100+ спикеров, 6 направлений, 3000+ участников. Регистрация открыта!");
-    request.setAttribute("pageKeywords", "IT конференция, CODEFEST, Челябинск, разработка, программирование, спикеры, 2026, backend, frontend, data science");
+    request.setAttribute("pageTitle", "CODEFEST 2026 — IT-конференция нового поколения");
+    request.setAttribute("pageDescription", "CODEFEST 2026 — крупнейшая IT-конференция года");
+    request.setAttribute("pageKeywords", "IT конференция, CODEFEST, Челябинск, разработка, программирование, 2026, backend, frontend, data science");
     request.setAttribute("bodyClass", "theme-purple");
 %>
 
