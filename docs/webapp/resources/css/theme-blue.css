@@ -1,6 +1,6 @@
 /* Синяя технологичная тема */
 body.theme-blue {
-    --primary: #0ea5e9;
+/*    --primary: #0ea5e9; */
     --primary-dark: #0284c7;
     --secondary: #06b6d4;
     --dark: #020617;
@@ -8,7 +8,7 @@ body.theme-blue {
     --light: #f0f9ff;
     --gray: #94a3b8;
     --gray-light: #e0f2fe;
-    --gradient: linear-gradient(135deg, #0ea5e9 40%, #06b6d4 100%);
+    --gradient: linear-gradient(135deg, #4565ff 40%, #65a3e3 100%);
 }
 
 /* Фильтр для фоновых изображений — сдвигаем фиолетовый в синий */
