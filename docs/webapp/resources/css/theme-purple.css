@@ -1,0 +1,12 @@
+/* Фиолетовая тема — оригинальный дизайн */
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #ec4899;
+    --dark: #0f0f1e;
+    --dark-light: #1a1a2e;
+    --light: #f8fafc;
+    --gray: #94a3b8;
+    --gray-light: #cbd5e1;
+    --gradient: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+}

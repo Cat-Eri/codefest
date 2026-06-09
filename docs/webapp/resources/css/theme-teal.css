@@ -1,0 +1,22 @@
+/* Бирюзовая минималистичная тема */
+:root {
+    --primary: #14b8a6;
+    --primary-dark: #0d9488;
+    --secondary: #10b981;
+    --dark: #022c22;
+    --dark-light: #064e3b;
+    --light: #f0fdfa;
+    --gray: #99f6e4;
+    --gray-light: #ccfbf1;
+    --gradient: linear-gradient(135deg, #14b8a6 0%, #10b981 100%);
+}
+
+.direction-card,
+.speaker-card,
+.program-item {
+    border-radius: 30px;
+}
+
+.btn {
+    border-radius: 50px;
+}
