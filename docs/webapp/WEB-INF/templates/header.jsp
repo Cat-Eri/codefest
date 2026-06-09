@@ -3,7 +3,7 @@
 <header class="header" role="banner">
     <div class="container">
         <nav class="nav" role="navigation" aria-label="Главное меню">
-            <a href="${pageContext.request.contextPath}/" class="logo" aria-label="CODEFEST 2026 - на главную">
+            <a href="${pageContext.request.contextPath}/" class="imagelogo" aria-label="CODEFEST 2026 - на главную">
                 <img class="imagelogo" src="${pageContext.request.contextPath}/resources/images/logo.png" alt="логотип">CODEFEST
             </a>
             
