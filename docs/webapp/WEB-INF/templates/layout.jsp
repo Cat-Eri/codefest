@@ -37,7 +37,7 @@
 <link rel="preload" as="image" href="${pageContext.request.contextPath}/resources/images/codefest-bg.jpeg">
 
 </head>
-<body class="${bodyClass}">
+<body class="theme-purple ${bodyClass}">
     <%@ include file="/WEB-INF/templates/header.jsp" %>
     
     <main id="main-content" role="main">
