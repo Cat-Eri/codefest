@@ -24,9 +24,6 @@
     
     <!-- Canonical -->
     <link rel="canonical" href="${pageContext.request.contextPath}">
-    
-    <!-- CSS (только main.css, как в эталонном index.html) -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
 
 <!-- Тема (по умолчанию фиолетовая) -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/theme-purple.css" id="theme-stylesheet">
