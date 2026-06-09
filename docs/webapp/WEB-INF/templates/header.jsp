@@ -9,8 +9,21 @@
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
-            
+          </button>
+
+<!-- Переключатель тем -->
+<div class="theme-switcher">
+    <button class="theme-btn active" data-theme="purple" aria-label="Фиолетовая тема" title="Фиолетовая">
+        <span class="theme-dot"></span>
+    </button>
+    <button class="theme-btn" data-theme="blue" aria-label="Синяя тема" title="Синяя">
+        <span class="theme-dot"></span>
+    </button>
+    <button class="theme-btn" data-theme="teal" aria-label="Бирюзовая тема" title="Бирюзовая">
+        <span class="theme-dot"></span>
+    </button>
+</div>
+
             <ul class="nav-links" id="nav-menu">
                 <li><a href="#about">О конференции</a></li>
                 <li><a href="#speakers">Спикеры</a></li>
