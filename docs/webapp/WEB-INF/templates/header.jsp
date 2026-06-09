@@ -3,9 +3,7 @@
 <header class="header" role="banner">
     <div class="container">
         <nav class="nav" role="navigation" aria-label="Главное меню">
-            <a href="${pageContext.request.contextPath}/" class="logo" aria-label="CODEFEST 2026 - на главную">
-                <img class="imagelogo" src="${pageContext.request.contextPath}/resources/images/logo.png" class="imagelogo" alt="логотип">CODEFEST
-            </a>
+            <a href="${pageContext.request.contextPath}/" class="logo" aria-label="CODEFEST 2026 - на главную"><img class="imagelogo" src="${pageContext.request.contextPath}/resources/images/logo.png" class="imagelogo" alt="логотип">CODEFEST</a>
             
             <button class="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
