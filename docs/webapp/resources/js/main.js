@@ -173,12 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeButtons = document.querySelectorAll('.theme-btn');
     const themeStylesheet = document.getElementById('theme-stylesheet');
     
+    // Если нет элемента или кнопок — выходим
+    if (!themeStylesheet || themeButtons.length === 0) return;
+    
     // Функция смены темы
-    function switchTheme(themeName) {
-        if (!themeStylesheet) return;
-        
+    function switchTheme(themeName, cssPath) {
         // Меняем href у тега link
-        themeStylesheet.href = `${window.location.pathname.replace(/\/[^\/]*$/, '')}/resources/css/theme-${themeName}.css`;
+        themeStylesheet.href = cssPath;
         
         // Обновляем активную кнопку
         themeButtons.forEach(btn => {
@@ -186,23 +187,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         // Сохраняем выбор в localStorage
-        localStorage.setItem('selectedTheme', themeName);
+        try {
+            localStorage.setItem('selectedTheme', themeName);
+            localStorage.setItem('selectedThemeCss', cssPath);
+        } catch(e) {
+            // localStorage может быть недоступен
+        }
     }
     
     // Обработчики кликов по кнопкам
     themeButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            switchTheme(btn.dataset.theme);
+            const themeName = btn.dataset.theme;
+            const cssPath = btn.dataset.css;
+            if (cssPath) {
+                switchTheme(themeName, cssPath);
+            }
         });
     });
     
     // Восстанавливаем тему при загрузке
-    const savedTheme = localStorage.getItem('selectedTheme');
-    if (savedTheme && themeStylesheet) {
-        // Меняем href сразу, без анимации
-        themeStylesheet.href = `${window.location.pathname.replace(/\/[^\/]*$/, '')}/resources/css/theme-${savedTheme}.css`;
-        themeButtons.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.theme === savedTheme);
-        });
+    try {
+        const savedTheme = localStorage.getItem('selectedTheme');
+        const savedCss = localStorage.getItem('selectedThemeCss');
+        
+        if (savedTheme && savedCss) {
+            // Находим кнопку с нужной темой
+            const savedBtn = Array.from(themeButtons).find(btn => btn.dataset.theme === savedTheme);
+            if (savedBtn) {
+                // Применяем сохранённый путь
+                themeStylesheet.href = savedCss;
+                themeButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.theme === savedTheme);
+                });
+            }
+        }
+    } catch(e) {
+        // Игнорируем ошибки localStorage
     }
 })();
