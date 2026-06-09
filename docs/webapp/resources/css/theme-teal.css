@@ -11,6 +11,14 @@ body.theme-teal {
     --gradient: linear-gradient(135deg, #14b8a6 0%, #10b981 100%);
 }
 
+/* Фильтр для фоновых изображений — сдвигаем фиолетовый в бирюзовый */
+body.theme-teal .hero,
+body.theme-teal #about .parallax-bg,
+body.theme-teal #program .parallax-bg,
+body.theme-teal .cta {
+    filter: hue-rotate(-90deg) saturate(1.15) brightness(0.9);
+}
+
 body.theme-teal .direction-card,
 body.theme-teal .speaker-card,
 body.theme-teal .program-item {
