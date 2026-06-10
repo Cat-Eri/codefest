@@ -405,6 +405,8 @@ body {
 .direction-icon {
     font-size: clamp(32px, 4vw, 44px);
     margin-bottom: clamp(14px, 2vw, 22px);
+    wight: 30px;
+    height: 30px;
 }
 
 .direction-card h3 {
